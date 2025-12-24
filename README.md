@@ -1,5 +1,3 @@
-@"
-
 \# Weather Forecast
 
 
@@ -19,6 +17,4 @@ Simple weather forecast project.
 \## Run
 
 python main.py
-
-"@ | Out-File README.md -Encoding utf8
 
