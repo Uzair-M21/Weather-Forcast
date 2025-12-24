@@ -1,4 +1,4 @@
-\# Weather Forecast
+# Weather Forecast
 
 
 
@@ -6,15 +6,14 @@ Simple weather forecast project.
 
 
 
-\## Setup
+## Setup
 
-\- Python
+- Python
 
-\- API-based weather data
+- API-based weather data
 
 
-
-\## Run
+## Run
 
 python main.py
 
