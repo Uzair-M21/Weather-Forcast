@@ -91,7 +91,7 @@ def main():
     delete_file()
     decompress_plz()
     insert_geoplz()
-    #delete_file()
+    delete_file()
 
 
 if __name__ == '__main__':
