@@ -109,6 +109,7 @@ def upsert_stations(stations):
         with conn.cursor() as cur:
             execute_batch(cur, sql, stations,page_size=500)
         conn.commit()
+        logger.info("data inserted into db")
     except Exception as e:
         if conn:
             conn.rollback()

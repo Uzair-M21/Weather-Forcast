@@ -8,5 +8,4 @@ def get_connection():
         database = os.getenv("DB_NAME","dw"),
         user=os.getenv("DB_USER","postgres"),
         password=os.getenv("DB_PWD","local_1234")
-
     )

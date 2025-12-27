@@ -6,6 +6,7 @@ import logging
 from psycopg2.extras import execute_batch
 import db
 
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s"
@@ -55,18 +56,19 @@ def insert_geoplz():
         raise
 
     geo_plz_data = [
-        (r["id"], r["postcode"], r["rel"], r["geometry"].wkt)
+        (r["id"], r["postcode"], r["rel"], r["geometry"].wkt, r["geometry"].wkt)
         for _, r in gdf.iterrows()
     ]
 
 
     sql = """
-    INSERT INTO raw.geo_plz (id, plz, rel, geom)
-    VALUES (%s, %s, %s, raw.ST_GeomFromText(%s::text, 4326))
+    INSERT INTO raw.geo_plz (id, plz, rel, geom,geom_geojson)
+    VALUES (%s, %s, %s, raw.ST_GeomFromText(%s::text, 4326), raw.ST_AsGeoJSON(raw.ST_GeomFromText(%s::text, 4326)))
     ON CONFLICT (id) DO UPDATE
     SET plz      = EXCLUDED.plz,
         rel      = EXCLUDED.rel,
-        geom     = EXCLUDED.geom;
+        geom     = EXCLUDED.geom,
+        geom_geojson = EXCLUDED.geom_geojson;
     """
 
     conn = None
@@ -89,7 +91,7 @@ def main():
     delete_file()
     decompress_plz()
     insert_geoplz()
-    delete_file()
+    #delete_file()
 
 
 if __name__ == '__main__':
