@@ -114,7 +114,7 @@ def get_forecast_weather(berlin_stations):
 
 def insert_forecast_weather(all_station_forecast_weather):
     sql = """
-            INSERT INTO raw.forecast_weather_raw (
+            INSERT INTO raw.forecast_weather (
                 source_id,
                 timestamp,
             
@@ -187,8 +187,7 @@ def main():
     berlin_stations = read_berlin_stations()
     all_station_forecast_weather = get_forecast_weather(berlin_stations)
     insert_forecast_weather(all_station_forecast_weather)
-def main2():
-    print("hello")
+
 if __name__ == '__main__':
-    main2()
+    main()
 
