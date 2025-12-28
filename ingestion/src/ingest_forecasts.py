@@ -1,6 +1,6 @@
 import json
 import logging
-import db
+from src.db import get_connection
 from psycopg2.extras import execute_batch
 import requests
 import pandas as pd

@@ -63,14 +63,14 @@ def insert_geoplz():
 
     sql = """
     INSERT INTO raw.geo_plz (id, plz, rel, geom,geom_geojson)
-    VALUES (%s, %s, %s, raw.ST_GeomFromText(%s::text, 4326), raw.ST_AsGeoJSON(raw.ST_GeomFromText(%s::text, 4326)))
+    VALUES (%s, %s, %s, raw.ST_GeomFromText(%s::text, 4326), raw.ST_AsGeoJSON(raw.ST_GeomFromText(%s::text, 4326))::jsonb)
     ON CONFLICT (id) DO UPDATE
     SET plz      = EXCLUDED.plz,
         rel      = EXCLUDED.rel,
         geom     = EXCLUDED.geom,
         geom_geojson = EXCLUDED.geom_geojson;
     """
-
+    print()
     conn = None
     try:
         logger.info("Connecting with db")

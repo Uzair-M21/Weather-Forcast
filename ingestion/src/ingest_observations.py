@@ -25,14 +25,16 @@ def read_berlin_stations():
                SELECT dwd_station_id,wmo_station_id,station_name
                from dev_intermediate.int_berlin_weather_stations_plz
                where 
+               dwd_station_id is not null and(
                observation_types like '%current%'
-               or observation_types like '%synop%'
+               or observation_types like '%synop%')
            """
     conn = None
     try:
         logger.info("Connecting with db")
         conn = db.get_connection()
         with conn.cursor() as cur:
+            logger.info("Fetching Berlin's Station list ")
             cur.execute(sql)
             rows=cur.fetchall()
             return rows
@@ -115,12 +117,15 @@ def get_current_weather(berlin_stations):
         except Exception as e:
             logger.error("Unexpected Error: %s", e)
 
-    now = datetime.now(timezone.utc).isoformat()
-
-    for row in all_station_current_weather:
-        row["inserted_at"] = now
-        row["updated_at"] = now
     return all_station_current_weather
+
+    """now = datetime.now(timezone.utc).isoformat()
+
+       for row in all_station_current_weather:
+            row["inserted_at"] = now
+            row["updated_at"] = now
+        return all_station_current_weather
+        """
 
 def upsert_current_weather(all_station_current_weather):
     sql = """
@@ -164,10 +169,7 @@ def upsert_current_weather(all_station_current_weather):
 
             wind_gust_speed_10,
             wind_gust_speed_30,
-            wind_gust_speed_60,
-
-            inserted_at,
-            updated_at
+            wind_gust_speed_60
         )
         VALUES (
             %(timestamp)s,
@@ -209,10 +211,7 @@ def upsert_current_weather(all_station_current_weather):
 
             %(wind_gust_speed_10)s,
             %(wind_gust_speed_30)s,
-            %(wind_gust_speed_60)s,
-
-            %(inserted_at)s,
-            %(updated_at)s
+            %(wind_gust_speed_60)s
         )
         ON CONFLICT (timestamp, source_id) DO UPDATE
         SET
@@ -254,7 +253,7 @@ def upsert_current_weather(all_station_current_weather):
             wind_gust_speed_30 = EXCLUDED.wind_gust_speed_30,
             wind_gust_speed_60 = EXCLUDED.wind_gust_speed_60,
 
-            updated_at = EXCLUDED.updated_at;
+            updated_at = now();
     """
     conn = None
     try:
