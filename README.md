@@ -100,3 +100,33 @@ The resulting data models are designed for downstream usage such as dashboards a
         └── intermediate/
 ```
 ## Running the Application
+
+1. **Download the source code**  
+   Clone or download the repository to your local machine.
+
+2. **Configure environment variables**  
+   Update the `PROJECT_ROOT` variable in the `.env` file (located at the repository root) to point to the absolute path of the downloaded project directory.
+
+3. **Start Docker**  
+   Ensure Docker is running on your machine.
+
+4. **Build and start services**  
+   From the project root directory, run:
+   ```
+   docker compose up -d --build
+    ```
+5. **Access Airflow and Postgres**  
+   - Open the Airflow UI to monitor DAG execution and logs.  
+   - Connect to Postgres using any client (e.g., psql or DBeaver) to inspect ingested and transformed data.  
+   - Use the credentials defined in the `.env` file.
+
+6. **Trigger DAGs manually (if required)**  
+   If the DAGs do not start automatically, trigger them manually in the following order:
+   ```bash
+   docker compose exec airflow-scheduler airflow dags trigger reference_setup
+   docker compose exec airflow-scheduler airflow dags trigger weather_hourly
+7. if the DAGs doesnot run automatically please run the following commands one by one
+ ```
+   docker compose exec airflow-scheduler airflow dags trigger reference_setup
+   docker compose exec airflow-scheduler airflow dags trigger weather_hourly
+   ```
