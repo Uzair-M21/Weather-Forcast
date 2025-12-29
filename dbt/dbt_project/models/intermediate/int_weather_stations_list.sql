@@ -14,4 +14,5 @@ select
   avg(distance)   as distance
 
 from {{ ref('stg_weather_stations_list') }}
+where dwd_station_id is not null
 group by 1,2
