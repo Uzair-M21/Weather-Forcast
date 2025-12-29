@@ -89,12 +89,14 @@ The resulting data models are designed for downstream usage such as dashboards a
 ---
 
 ## Repository Structure
+```
 ├── docker-compose.yml
 ├── ingestion/ # Python ingestion modules / Docker image
 ├── airflow/ # Airflow DAGs
 ├── postgres/ # Postgres initialization (Create Statements - raw layer)
 └── dbt/ # dbt project
     └── models/
-      ├── staging/
-      └── intermediate/
-
+        ├── staging/
+        └── intermediate/
+```
+## Running the Application
