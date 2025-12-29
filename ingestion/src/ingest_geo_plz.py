@@ -50,7 +50,7 @@ def insert_geoplz():
         gdf = gpd.read_file("postleitzahlen.geojson")
         logger.info("Restricting Postal Codes to Berlin")
         gdf["postcode_int"] = gdf["postcode"].astype(int)
-        gdf=gdf[(gdf["postcode_int"] >= 10115) & (gdf["postcode_int"] <=14199)].drop(columns=["postcode_int"])
+        gdf=gdf[(gdf["postcode_int"] >= 10115) & (gdf["postcode_int"] <=14199)].drop(columns=["postcode_int"]) # restricting postal code to berlin only
     except Exception as e:
         logging.error("Failed to Read File, Error : %s",e)
         raise
