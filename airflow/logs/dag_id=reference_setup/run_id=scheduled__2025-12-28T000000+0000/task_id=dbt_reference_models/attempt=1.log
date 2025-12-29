@@ -41,3 +41,87 @@
 [2025-12-29T03:46:01.353+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
 [2025-12-29T03:46:01.373+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
 [2025-12-29T03:46:01.375+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-12-29T05:20:36.448+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-29T05:20:36.482+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: reference_setup.dbt_reference_models scheduled__2025-12-28T00:00:00+00:00 [queued]>
+[2025-12-29T05:20:36.489+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: reference_setup.dbt_reference_models scheduled__2025-12-28T00:00:00+00:00 [queued]>
+[2025-12-29T05:20:36.490+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-12-29T05:20:36.503+0000] {taskinstance.py:2330} INFO - Executing <Task(DockerOperator): dbt_reference_models> on 2025-12-28 00:00:00+00:00
+[2025-12-29T05:20:36.510+0000] {standard_task_runner.py:64} INFO - Started process 206 to run task
+[2025-12-29T05:20:36.512+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'reference_setup', 'dbt_reference_models', 'scheduled__2025-12-28T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/refrence_setup.py', '--cfg-path', '/tmp/tmpixd5gp3p']
+[2025-12-29T05:20:36.514+0000] {standard_task_runner.py:91} INFO - Job 5: Subtask dbt_reference_models
+[2025-12-29T05:20:36.568+0000] {task_command.py:426} INFO - Running <TaskInstance: reference_setup.dbt_reference_models scheduled__2025-12-28T00:00:00+00:00 [running]> on host 86ae71ae83a3
+[2025-12-29T05:20:36.649+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='reference_setup' AIRFLOW_CTX_TASK_ID='dbt_reference_models' AIRFLOW_CTX_EXECUTION_DATE='2025-12-28T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-28T00:00:00+00:00'
+[2025-12-29T05:20:36.649+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-29T05:20:36.682+0000] {docker.py:367} INFO - Starting docker container from image ghcr.io/dbt-labs/dbt-postgres:1.8.2
+[2025-12-29T05:20:38.515+0000] {docker.py:438} INFO - [0m05:20:38  Running with dbt=1.8.3
+[2025-12-29T05:20:38.724+0000] {docker.py:438} INFO - [0m05:20:38  Registered adapter: postgres=1.8.2
+[2025-12-29T05:20:39.059+0000] {docker.py:438} INFO - [0m05:20:39  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2025-12-29T05:20:39.060+0000] {docker.py:438} INFO - There are 1 unused configuration paths:
+[2025-12-29T05:20:39.060+0000] {docker.py:438} INFO - - models.dbt_project.final
+[2025-12-29T05:20:39.197+0000] {docker.py:438} INFO - [0m05:20:39  Found 12 models, 4 data tests, 415 macros
+[2025-12-29T05:20:39.200+0000] {docker.py:438} INFO - [0m05:20:39
+[2025-12-29T05:20:39.423+0000] {docker.py:438} INFO - [0m05:20:39  Concurrency: 1 threads (target='dev')
+[2025-12-29T05:20:39.423+0000] {docker.py:438} INFO - [0m05:20:39
+[2025-12-29T05:20:39.433+0000] {docker.py:438} INFO - [0m05:20:39  1 of 5 START sql view model dev_staging.stg_geo_plz ............................ [RUN]
+[2025-12-29T05:20:39.546+0000] {docker.py:438} INFO - [0m05:20:39  1 of 5 OK created sql view model dev_staging.stg_geo_plz ....................... [[32mCREATE VIEW[0m in 0.11s]
+[2025-12-29T05:20:39.548+0000] {docker.py:438} INFO - [0m05:20:39  2 of 5 START sql view model dev_staging.stg_weather_stations_list .............. [RUN]
+[2025-12-29T05:20:39.599+0000] {docker.py:438} INFO - [0m05:20:39  2 of 5 OK created sql view model dev_staging.stg_weather_stations_list ......... [[32mCREATE VIEW[0m in 0.05s]
+[2025-12-29T05:20:39.602+0000] {docker.py:438} INFO - [0m05:20:39  3 of 5 START sql view model dev_intermediate.int_geo_plz ....................... [RUN]
+[2025-12-29T05:20:39.656+0000] {docker.py:438} INFO - [0m05:20:39  3 of 5 OK created sql view model dev_intermediate.int_geo_plz .................. [[32mCREATE VIEW[0m in 0.05s]
+[2025-12-29T05:20:39.658+0000] {docker.py:438} INFO - [0m05:20:39  4 of 5 START sql view model dev_intermediate.int_weather_stations_list ......... [RUN]
+[2025-12-29T05:20:39.716+0000] {docker.py:438} INFO - [0m05:20:39  4 of 5 OK created sql view model dev_intermediate.int_weather_stations_list .... [[32mCREATE VIEW[0m in 0.05s]
+[2025-12-29T05:20:39.720+0000] {docker.py:438} INFO - [0m05:20:39  5 of 5 START sql view model dev_intermediate.int_berlin_weather_stations_plz ... [RUN]
+[2025-12-29T05:20:39.779+0000] {docker.py:438} INFO - [0m05:20:39  5 of 5 OK created sql view model dev_intermediate.int_berlin_weather_stations_plz  [[32mCREATE VIEW[0m in 0.06s]
+[2025-12-29T05:20:39.796+0000] {docker.py:438} INFO - [0m05:20:39
+[2025-12-29T05:20:39.796+0000] {docker.py:438} INFO - [0m05:20:39  Finished running 5 view models in 0 hours 0 minutes and 0.59 seconds (0.59s).
+[2025-12-29T05:20:39.840+0000] {docker.py:438} INFO - [0m05:20:39
+[2025-12-29T05:20:39.840+0000] {docker.py:438} INFO - [0m05:20:39  [32mCompleted successfully[0m
+[2025-12-29T05:20:39.841+0000] {docker.py:438} INFO - [0m05:20:39
+[2025-12-29T05:20:39.842+0000] {docker.py:438} INFO - [0m05:20:39  Done. PASS=5 WARN=0 ERROR=0 SKIP=0 TOTAL=5
+[2025-12-29T05:20:40.969+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-29T05:20:40.993+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=reference_setup, task_id=dbt_reference_models, run_id=scheduled__2025-12-28T00:00:00+00:00, execution_date=20251228T000000, start_date=20251229T052036, end_date=20251229T052040
+[2025-12-29T05:20:41.024+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-12-29T05:20:41.044+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-12-29T05:20:41.046+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-12-29T05:32:40.027+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-29T05:32:40.054+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: reference_setup.dbt_reference_models scheduled__2025-12-28T00:00:00+00:00 [queued]>
+[2025-12-29T05:32:40.062+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: reference_setup.dbt_reference_models scheduled__2025-12-28T00:00:00+00:00 [queued]>
+[2025-12-29T05:32:40.063+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-12-29T05:32:40.075+0000] {taskinstance.py:2330} INFO - Executing <Task(DockerOperator): dbt_reference_models> on 2025-12-28 00:00:00+00:00
+[2025-12-29T05:32:40.083+0000] {standard_task_runner.py:64} INFO - Started process 206 to run task
+[2025-12-29T05:32:40.085+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'reference_setup', 'dbt_reference_models', 'scheduled__2025-12-28T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/refrence_setup.py', '--cfg-path', '/tmp/tmpdpkph83w']
+[2025-12-29T05:32:40.087+0000] {standard_task_runner.py:91} INFO - Job 5: Subtask dbt_reference_models
+[2025-12-29T05:32:40.141+0000] {task_command.py:426} INFO - Running <TaskInstance: reference_setup.dbt_reference_models scheduled__2025-12-28T00:00:00+00:00 [running]> on host 9d8f0caf82bb
+[2025-12-29T05:32:40.225+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='reference_setup' AIRFLOW_CTX_TASK_ID='dbt_reference_models' AIRFLOW_CTX_EXECUTION_DATE='2025-12-28T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-28T00:00:00+00:00'
+[2025-12-29T05:32:40.227+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-29T05:32:40.260+0000] {docker.py:367} INFO - Starting docker container from image ghcr.io/dbt-labs/dbt-postgres:1.8.2
+[2025-12-29T05:32:41.875+0000] {docker.py:438} INFO - [0m05:32:41  Running with dbt=1.8.3
+[2025-12-29T05:32:42.065+0000] {docker.py:438} INFO - [0m05:32:42  Registered adapter: postgres=1.8.2
+[2025-12-29T05:32:42.552+0000] {docker.py:438} INFO - [0m05:32:42  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2025-12-29T05:32:42.553+0000] {docker.py:438} INFO - There are 1 unused configuration paths:
+[2025-12-29T05:32:42.553+0000] {docker.py:438} INFO - - models.dbt_project.final
+[2025-12-29T05:32:42.656+0000] {docker.py:438} INFO - [0m05:32:42  Found 12 models, 4 data tests, 415 macros
+[2025-12-29T05:32:42.658+0000] {docker.py:438} INFO - [0m05:32:42
+[2025-12-29T05:32:42.869+0000] {docker.py:438} INFO - [0m05:32:42  Concurrency: 1 threads (target='dev')
+[2025-12-29T05:32:42.870+0000] {docker.py:438} INFO - [0m05:32:42
+[2025-12-29T05:32:42.880+0000] {docker.py:438} INFO - [0m05:32:42  1 of 5 START sql view model dev_staging.stg_geo_plz ............................ [RUN]
+[2025-12-29T05:32:42.997+0000] {docker.py:438} INFO - [0m05:32:42  1 of 5 OK created sql view model dev_staging.stg_geo_plz ....................... [[32mCREATE VIEW[0m in 0.11s]
+[2025-12-29T05:32:42.999+0000] {docker.py:438} INFO - [0m05:32:42  2 of 5 START sql view model dev_staging.stg_weather_stations_list .............. [RUN]
+[2025-12-29T05:32:43.050+0000] {docker.py:438} INFO - [0m05:32:43  2 of 5 OK created sql view model dev_staging.stg_weather_stations_list ......... [[32mCREATE VIEW[0m in 0.05s]
+[2025-12-29T05:32:43.052+0000] {docker.py:438} INFO - [0m05:32:43  3 of 5 START sql view model dev_intermediate.int_geo_plz ....................... [RUN]
+[2025-12-29T05:32:43.103+0000] {docker.py:438} INFO - [0m05:32:43  3 of 5 OK created sql view model dev_intermediate.int_geo_plz .................. [[32mCREATE VIEW[0m in 0.05s]
+[2025-12-29T05:32:43.106+0000] {docker.py:438} INFO - [0m05:32:43  4 of 5 START sql view model dev_intermediate.int_weather_stations_list ......... [RUN]
+[2025-12-29T05:32:43.228+0000] {docker.py:438} INFO - [0m05:32:43  4 of 5 OK created sql view model dev_intermediate.int_weather_stations_list .... [[32mCREATE VIEW[0m in 0.12s]
+[2025-12-29T05:32:43.231+0000] {docker.py:438} INFO - [0m05:32:43  5 of 5 START sql view model dev_intermediate.int_berlin_weather_stations_plz ... [RUN]
+[2025-12-29T05:32:43.286+0000] {docker.py:438} INFO - [0m05:32:43  5 of 5 OK created sql view model dev_intermediate.int_berlin_weather_stations_plz  [[32mCREATE VIEW[0m in 0.05s]
+[2025-12-29T05:32:43.302+0000] {docker.py:438} INFO - [0m05:32:43
+[2025-12-29T05:32:43.303+0000] {docker.py:438} INFO - [0m05:32:43  Finished running 5 view models in 0 hours 0 minutes and 0.64 seconds (0.64s).
+[2025-12-29T05:32:43.353+0000] {docker.py:438} INFO - [0m05:32:43
+[2025-12-29T05:32:43.354+0000] {docker.py:438} INFO - [0m05:32:43  [32mCompleted successfully[0m
+[2025-12-29T05:32:43.355+0000] {docker.py:438} INFO - [0m05:32:43
+[2025-12-29T05:32:43.356+0000] {docker.py:438} INFO - [0m05:32:43  Done. PASS=5 WARN=0 ERROR=0 SKIP=0 TOTAL=5
+[2025-12-29T05:32:44.455+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-29T05:32:44.480+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=reference_setup, task_id=dbt_reference_models, run_id=scheduled__2025-12-28T00:00:00+00:00, execution_date=20251228T000000, start_date=20251229T053240, end_date=20251229T053244
+[2025-12-29T05:32:44.515+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-12-29T05:32:44.535+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-12-29T05:32:44.540+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

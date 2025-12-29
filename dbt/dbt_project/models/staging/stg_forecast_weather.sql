@@ -29,9 +29,7 @@ select
     fallback_source_ids::jsonb         as fallback_source_ids,
 
     icon,
-    inserted_at
-
-
+    inserted_at,
 
     ----- Validation flags
 

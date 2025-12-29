@@ -369,3 +369,55 @@ airflow.providers.docker.exceptions.DockerContainerFailedException: Docker conta
 [2025-12-29T03:45:55.239+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
 [2025-12-29T03:45:55.264+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
 [2025-12-29T03:45:55.266+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-12-29T05:20:21.547+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-29T05:20:21.582+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: reference_setup.ingest_reference_data.ingest_geo_plz scheduled__2025-12-28T00:00:00+00:00 [queued]>
+[2025-12-29T05:20:21.591+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: reference_setup.ingest_reference_data.ingest_geo_plz scheduled__2025-12-28T00:00:00+00:00 [queued]>
+[2025-12-29T05:20:21.592+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-12-29T05:20:21.606+0000] {taskinstance.py:2330} INFO - Executing <Task(DockerOperator): ingest_reference_data.ingest_geo_plz> on 2025-12-28 00:00:00+00:00
+[2025-12-29T05:20:21.613+0000] {standard_task_runner.py:64} INFO - Started process 203 to run task
+[2025-12-29T05:20:21.615+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'reference_setup', 'ingest_reference_data.ingest_geo_plz', 'scheduled__2025-12-28T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/refrence_setup.py', '--cfg-path', '/tmp/tmp7eqatp78']
+[2025-12-29T05:20:21.618+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask ingest_reference_data.ingest_geo_plz
+[2025-12-29T05:20:21.669+0000] {task_command.py:426} INFO - Running <TaskInstance: reference_setup.ingest_reference_data.ingest_geo_plz scheduled__2025-12-28T00:00:00+00:00 [running]> on host 86ae71ae83a3
+[2025-12-29T05:20:21.756+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='reference_setup' AIRFLOW_CTX_TASK_ID='ingest_reference_data.ingest_geo_plz' AIRFLOW_CTX_EXECUTION_DATE='2025-12-28T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-28T00:00:00+00:00'
+[2025-12-29T05:20:21.757+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-29T05:20:21.814+0000] {docker.py:367} INFO - Starting docker container from image weather-ingestion:latest
+[2025-12-29T05:20:23.298+0000] {docker.py:438} INFO - 2025-12-29 05:20:23,295 - ERROR - Unable to delete File, Error : name 'plz_file_decomp' is not defined
+[2025-12-29T05:20:23.299+0000] {docker.py:438} INFO - 2025-12-29 05:20:23,296 - INFO - Decompressing Plz File
+[2025-12-29T05:20:24.391+0000] {docker.py:438} INFO - 2025-12-29 05:20:24,390 - INFO - Writing Plz File
+[2025-12-29T05:20:24.774+0000] {docker.py:438} INFO - 2025-12-29 05:20:24,773 - INFO - File Written Successfully
+[2025-12-29T05:20:24.775+0000] {docker.py:438} INFO - 2025-12-29 05:20:24,774 - INFO - Reading Plz File
+[2025-12-29T05:20:34.691+0000] {docker.py:438} INFO - 2025-12-29 05:20:34,688 - INFO - Restricting Postal Codes to Berlin
+[2025-12-29T05:20:34.743+0000] {docker.py:438} INFO - 
+[2025-12-29T05:20:34.743+0000] {docker.py:438} INFO - 2025-12-29 05:20:34,741 - INFO - Connecting with db
+[2025-12-29T05:20:34.922+0000] {docker.py:438} INFO - 2025-12-29 05:20:34,920 - ERROR - Unable to delete File, Error : name 'plz_file_decomp' is not defined
+[2025-12-29T05:20:35.896+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-29T05:20:35.926+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=reference_setup, task_id=ingest_reference_data.ingest_geo_plz, run_id=scheduled__2025-12-28T00:00:00+00:00, execution_date=20251228T000000, start_date=20251229T052021, end_date=20251229T052035
+[2025-12-29T05:20:35.956+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-12-29T05:20:35.983+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-12-29T05:20:35.986+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-12-29T05:32:25.149+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-29T05:32:25.181+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: reference_setup.ingest_reference_data.ingest_geo_plz scheduled__2025-12-28T00:00:00+00:00 [queued]>
+[2025-12-29T05:32:25.189+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: reference_setup.ingest_reference_data.ingest_geo_plz scheduled__2025-12-28T00:00:00+00:00 [queued]>
+[2025-12-29T05:32:25.190+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-12-29T05:32:25.204+0000] {taskinstance.py:2330} INFO - Executing <Task(DockerOperator): ingest_reference_data.ingest_geo_plz> on 2025-12-28 00:00:00+00:00
+[2025-12-29T05:32:25.211+0000] {standard_task_runner.py:64} INFO - Started process 203 to run task
+[2025-12-29T05:32:25.214+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'reference_setup', 'ingest_reference_data.ingest_geo_plz', 'scheduled__2025-12-28T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/refrence_setup.py', '--cfg-path', '/tmp/tmp7evlt3tc']
+[2025-12-29T05:32:25.217+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask ingest_reference_data.ingest_geo_plz
+[2025-12-29T05:32:25.276+0000] {task_command.py:426} INFO - Running <TaskInstance: reference_setup.ingest_reference_data.ingest_geo_plz scheduled__2025-12-28T00:00:00+00:00 [running]> on host 9d8f0caf82bb
+[2025-12-29T05:32:25.368+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='reference_setup' AIRFLOW_CTX_TASK_ID='ingest_reference_data.ingest_geo_plz' AIRFLOW_CTX_EXECUTION_DATE='2025-12-28T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-28T00:00:00+00:00'
+[2025-12-29T05:32:25.368+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-29T05:32:25.420+0000] {docker.py:367} INFO - Starting docker container from image weather-ingestion:latest
+[2025-12-29T05:32:26.890+0000] {docker.py:438} INFO - 2025-12-29 05:32:26,889 - ERROR - Unable to delete File, Error : name 'plz_file_decomp' is not defined
+[2025-12-29T05:32:26.891+0000] {docker.py:438} INFO - 2025-12-29 05:32:26,889 - INFO - Decompressing Plz File
+[2025-12-29T05:32:27.765+0000] {docker.py:438} INFO - 2025-12-29 05:32:27,764 - INFO - Writing Plz File
+[2025-12-29T05:32:28.014+0000] {docker.py:438} INFO - 2025-12-29 05:32:28,013 - INFO - File Written Successfully
+[2025-12-29T05:32:28.015+0000] {docker.py:438} INFO - 2025-12-29 05:32:28,014 - INFO - Reading Plz File
+[2025-12-29T05:32:37.698+0000] {docker.py:438} INFO - 2025-12-29 05:32:37,696 - INFO - Restricting Postal Codes to Berlin
+[2025-12-29T05:32:37.739+0000] {docker.py:438} INFO - 
+[2025-12-29T05:32:37.740+0000] {docker.py:438} INFO - 2025-12-29 05:32:37,738 - INFO - Connecting with db
+[2025-12-29T05:32:37.907+0000] {docker.py:438} INFO - 2025-12-29 05:32:37,905 - ERROR - Unable to delete File, Error : name 'plz_file_decomp' is not defined
+[2025-12-29T05:32:38.828+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-29T05:32:38.861+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=reference_setup, task_id=ingest_reference_data.ingest_geo_plz, run_id=scheduled__2025-12-28T00:00:00+00:00, execution_date=20251228T000000, start_date=20251229T053225, end_date=20251229T053238
+[2025-12-29T05:32:38.908+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-12-29T05:32:38.938+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-12-29T05:32:38.940+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

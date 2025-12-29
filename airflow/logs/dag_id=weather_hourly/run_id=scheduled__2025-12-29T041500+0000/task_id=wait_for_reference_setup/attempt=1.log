@@ -16,3 +16,73 @@
 [2025-12-29T05:15:01.904+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
 [2025-12-29T05:15:01.930+0000] {taskinstance.py:3503} INFO - 2 downstream tasks scheduled from follow-on schedule check
 [2025-12-29T05:15:01.932+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-12-29T05:20:21.552+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-29T05:20:21.589+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather_hourly.wait_for_reference_setup scheduled__2025-12-29T04:15:00+00:00 [queued]>
+[2025-12-29T05:20:21.599+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather_hourly.wait_for_reference_setup scheduled__2025-12-29T04:15:00+00:00 [queued]>
+[2025-12-29T05:20:21.600+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-12-29T05:20:21.614+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonSensor): wait_for_reference_setup> on 2025-12-29 04:15:00+00:00
+[2025-12-29T05:20:21.621+0000] {standard_task_runner.py:64} INFO - Started process 204 to run task
+[2025-12-29T05:20:21.624+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'weather_hourly', 'wait_for_reference_setup', 'scheduled__2025-12-29T04:15:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/weather_hourly.py', '--cfg-path', '/tmp/tmpwvuj9ywh']
+[2025-12-29T05:20:21.626+0000] {standard_task_runner.py:91} INFO - Job 2: Subtask wait_for_reference_setup
+[2025-12-29T05:20:21.676+0000] {task_command.py:426} INFO - Running <TaskInstance: weather_hourly.wait_for_reference_setup scheduled__2025-12-29T04:15:00+00:00 [running]> on host 86ae71ae83a3
+[2025-12-29T05:20:21.762+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='weather_hourly' AIRFLOW_CTX_TASK_ID='wait_for_reference_setup' AIRFLOW_CTX_EXECUTION_DATE='2025-12-29T04:15:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-29T04:15:00+00:00'
+[2025-12-29T05:20:21.763+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-29T05:20:21.789+0000] {python.py:75} INFO - Poking callable: <function reference_is_ready at 0x7fa923df8a40>
+[2025-12-29T05:20:21.798+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-29T05:20:21.819+0000] {taskinstance.py:2865} INFO - Rescheduling task, marking task as UP_FOR_RESCHEDULE
+[2025-12-29T05:20:21.836+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-12-29T05:20:21.863+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-29T05:20:21.896+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-12-29T05:21:22.662+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-29T05:21:22.846+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather_hourly.wait_for_reference_setup scheduled__2025-12-29T04:15:00+00:00 [queued]>
+[2025-12-29T05:21:22.853+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather_hourly.wait_for_reference_setup scheduled__2025-12-29T04:15:00+00:00 [queued]>
+[2025-12-29T05:21:22.854+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-12-29T05:21:22.864+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonSensor): wait_for_reference_setup> on 2025-12-29 04:15:00+00:00
+[2025-12-29T05:21:22.870+0000] {standard_task_runner.py:64} INFO - Started process 230 to run task
+[2025-12-29T05:21:22.873+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'weather_hourly', 'wait_for_reference_setup', 'scheduled__2025-12-29T04:15:00+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/weather_hourly.py', '--cfg-path', '/tmp/tmpq5okr3gb']
+[2025-12-29T05:21:22.874+0000] {standard_task_runner.py:91} INFO - Job 7: Subtask wait_for_reference_setup
+[2025-12-29T05:21:22.920+0000] {task_command.py:426} INFO - Running <TaskInstance: weather_hourly.wait_for_reference_setup scheduled__2025-12-29T04:15:00+00:00 [running]> on host 86ae71ae83a3
+[2025-12-29T05:21:22.992+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='weather_hourly' AIRFLOW_CTX_TASK_ID='wait_for_reference_setup' AIRFLOW_CTX_EXECUTION_DATE='2025-12-29T04:15:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-29T04:15:00+00:00'
+[2025-12-29T05:21:22.993+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-29T05:21:23.013+0000] {python.py:75} INFO - Poking callable: <function reference_is_ready at 0x7fa923dfca40>
+[2025-12-29T05:21:23.021+0000] {base.py:294} INFO - Success criteria met. Exiting.
+[2025-12-29T05:21:23.022+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-29T05:21:23.030+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=weather_hourly, task_id=wait_for_reference_setup, run_id=scheduled__2025-12-29T04:15:00+00:00, execution_date=20251229T041500, start_date=20251229T052122, end_date=20251229T052123
+[2025-12-29T05:21:23.045+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-12-29T05:21:23.072+0000] {taskinstance.py:3503} INFO - 2 downstream tasks scheduled from follow-on schedule check
+[2025-12-29T05:21:23.073+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-12-29T05:32:25.145+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-29T05:32:25.176+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather_hourly.wait_for_reference_setup scheduled__2025-12-29T04:15:00+00:00 [queued]>
+[2025-12-29T05:32:25.185+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather_hourly.wait_for_reference_setup scheduled__2025-12-29T04:15:00+00:00 [queued]>
+[2025-12-29T05:32:25.186+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-12-29T05:32:25.198+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonSensor): wait_for_reference_setup> on 2025-12-29 04:15:00+00:00
+[2025-12-29T05:32:25.205+0000] {standard_task_runner.py:64} INFO - Started process 202 to run task
+[2025-12-29T05:32:25.208+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'weather_hourly', 'wait_for_reference_setup', 'scheduled__2025-12-29T04:15:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/weather_hourly.py', '--cfg-path', '/tmp/tmps7d66f6k']
+[2025-12-29T05:32:25.210+0000] {standard_task_runner.py:91} INFO - Job 2: Subtask wait_for_reference_setup
+[2025-12-29T05:32:25.265+0000] {task_command.py:426} INFO - Running <TaskInstance: weather_hourly.wait_for_reference_setup scheduled__2025-12-29T04:15:00+00:00 [running]> on host 9d8f0caf82bb
+[2025-12-29T05:32:25.366+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='weather_hourly' AIRFLOW_CTX_TASK_ID='wait_for_reference_setup' AIRFLOW_CTX_EXECUTION_DATE='2025-12-29T04:15:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-29T04:15:00+00:00'
+[2025-12-29T05:32:25.367+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-29T05:32:25.403+0000] {python.py:75} INFO - Poking callable: <function reference_is_ready at 0x7fdaed1b0a40>
+[2025-12-29T05:32:25.414+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-29T05:32:25.438+0000] {taskinstance.py:2865} INFO - Rescheduling task, marking task as UP_FOR_RESCHEDULE
+[2025-12-29T05:32:25.461+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-12-29T05:32:25.497+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-29T05:32:25.582+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-12-29T05:33:26.254+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-29T05:33:26.423+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather_hourly.wait_for_reference_setup scheduled__2025-12-29T04:15:00+00:00 [queued]>
+[2025-12-29T05:33:26.429+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather_hourly.wait_for_reference_setup scheduled__2025-12-29T04:15:00+00:00 [queued]>
+[2025-12-29T05:33:26.429+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-12-29T05:33:26.441+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonSensor): wait_for_reference_setup> on 2025-12-29 04:15:00+00:00
+[2025-12-29T05:33:26.446+0000] {standard_task_runner.py:64} INFO - Started process 230 to run task
+[2025-12-29T05:33:26.449+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'weather_hourly', 'wait_for_reference_setup', 'scheduled__2025-12-29T04:15:00+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/weather_hourly.py', '--cfg-path', '/tmp/tmpzpvd7jos']
+[2025-12-29T05:33:26.452+0000] {standard_task_runner.py:91} INFO - Job 7: Subtask wait_for_reference_setup
+[2025-12-29T05:33:26.497+0000] {task_command.py:426} INFO - Running <TaskInstance: weather_hourly.wait_for_reference_setup scheduled__2025-12-29T04:15:00+00:00 [running]> on host 9d8f0caf82bb
+[2025-12-29T05:33:26.572+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='weather_hourly' AIRFLOW_CTX_TASK_ID='wait_for_reference_setup' AIRFLOW_CTX_EXECUTION_DATE='2025-12-29T04:15:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-29T04:15:00+00:00'
+[2025-12-29T05:33:26.573+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-29T05:33:26.593+0000] {python.py:75} INFO - Poking callable: <function reference_is_ready at 0x7fdaed1b0a40>
+[2025-12-29T05:33:26.600+0000] {base.py:294} INFO - Success criteria met. Exiting.
+[2025-12-29T05:33:26.601+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-29T05:33:26.609+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=weather_hourly, task_id=wait_for_reference_setup, run_id=scheduled__2025-12-29T04:15:00+00:00, execution_date=20251229T041500, start_date=20251229T053326, end_date=20251229T053326
+[2025-12-29T05:33:26.622+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-12-29T05:33:26.648+0000] {taskinstance.py:3503} INFO - 2 downstream tasks scheduled from follow-on schedule check
+[2025-12-29T05:33:26.650+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -4,7 +4,7 @@ with consolidated as (
 
     select
         "timestamp",
-        source_id,
+        station_id,
 
         -- safe-nulled
         case when cloud_cover is null or cloud_cover between 0 and 100 then cloud_cover end as cloud_cover,
@@ -74,7 +74,7 @@ latest_per_station as (
         select
             c.*,
             row_number() over (
-                partition by c.source_id
+                partition by c.station_id
                 order by c."timestamp" desc, c.updated_at desc
             ) as rn
         from consolidated c
@@ -86,7 +86,7 @@ latest_per_station as (
 final as (
 
     select
-        source_id,
+        station_id,
         "timestamp" as last_observation_at,
         cloud_cover,
         condition,
@@ -104,7 +104,7 @@ final as (
         wind_speed,
         wind_gust_direction,
         wind_gust_speed,
-        is_valid_core_metrics,
+        is_all_flag_valid,
 
         -- freshness
         extract(epoch from (now() - "timestamp")) / 60.0 as minutes_since_last_observation
