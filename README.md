@@ -116,8 +116,9 @@ The resulting data models are designed for downstream usage such as dashboards a
    docker compose up -d --build
     ```
 5. **Access Airflow and Postgres**  
-   - Open the Airflow UI to monitor DAG execution and logs.  
-   - Connect to Postgres using any client (e.g., psql or DBeaver) to inspect ingested and transformed data.  
+   - Open the Airflow UI to monitor DAG execution and logs.
+     http://localhost:8080/
+   - Connect to Postgres using any client (e.g., psql or DBeaver) to inspect ingested and transformed data. localhost:5433 
    - Use the credentials defined in the `.env` file.
 
 6. **Trigger DAGs manually (if required)**  
