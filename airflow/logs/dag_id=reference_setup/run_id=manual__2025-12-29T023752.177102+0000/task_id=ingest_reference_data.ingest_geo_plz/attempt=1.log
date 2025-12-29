@@ -1,0 +1,40 @@
+[2025-12-29T02:37:55.458+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-29T02:37:55.484+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: reference_setup.ingest_reference_data.ingest_geo_plz manual__2025-12-29T02:37:52.177102+00:00 [queued]>
+[2025-12-29T02:37:55.491+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: reference_setup.ingest_reference_data.ingest_geo_plz manual__2025-12-29T02:37:52.177102+00:00 [queued]>
+[2025-12-29T02:37:55.492+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-12-29T02:37:55.502+0000] {taskinstance.py:2330} INFO - Executing <Task(DockerOperator): ingest_reference_data.ingest_geo_plz> on 2025-12-29 02:37:52.177102+00:00
+[2025-12-29T02:37:55.508+0000] {standard_task_runner.py:64} INFO - Started process 391 to run task
+[2025-12-29T02:37:55.511+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'reference_setup', 'ingest_reference_data.ingest_geo_plz', 'manual__2025-12-29T02:37:52.177102+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/refrence_setup.py', '--cfg-path', '/tmp/tmpwmftt7mv']
+[2025-12-29T02:37:55.513+0000] {standard_task_runner.py:91} INFO - Job 4: Subtask ingest_reference_data.ingest_geo_plz
+[2025-12-29T02:37:55.561+0000] {task_command.py:426} INFO - Running <TaskInstance: reference_setup.ingest_reference_data.ingest_geo_plz manual__2025-12-29T02:37:52.177102+00:00 [running]> on host b4f558978544
+[2025-12-29T02:37:55.641+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='reference_setup' AIRFLOW_CTX_TASK_ID='ingest_reference_data.ingest_geo_plz' AIRFLOW_CTX_EXECUTION_DATE='2025-12-29T02:37:52.177102+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-29T02:37:52.177102+00:00'
+[2025-12-29T02:37:55.642+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-29T02:37:55.657+0000] {docker.py:157} ERROR - Failed to establish connection to Docker host unix://var/run/docker.sock: Error while fetching server API version: ('Connection aborted.', FileNotFoundError(2, 'No such file or directory'))
+[2025-12-29T02:37:55.658+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-29T02:37:55.667+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/docker/operators/docker.py", line 495, in execute
+    if self.force_pull or not self.cli.images(name=self.image):
+                              ^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/docker/operators/docker.py", line 363, in cli
+    return self.hook.api_client
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/functools.py", line 1001, in __get__
+    val = self.func(instance)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/docker/hooks/docker.py", line 161, in api_client
+    raise AirflowException("Failed to establish connection to any given Docker hosts.")
+airflow.exceptions.AirflowException: Failed to establish connection to any given Docker hosts.
+[2025-12-29T02:37:55.672+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=reference_setup, task_id=ingest_reference_data.ingest_geo_plz, run_id=manual__2025-12-29T02:37:52.177102+00:00, execution_date=20251229T023752, start_date=20251229T023755, end_date=20251229T023755
+[2025-12-29T02:37:55.683+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 4 for task ingest_reference_data.ingest_geo_plz (Failed to establish connection to any given Docker hosts.; 391)
+[2025-12-29T02:37:55.724+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2025-12-29T02:37:55.733+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

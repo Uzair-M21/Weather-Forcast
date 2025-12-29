@@ -23,5 +23,8 @@ RUN pip install --no-cache-dir -r /app/requirements.txt
 
 COPY src /app/src
 
-# No fixed entrypoint; we will override per task
-CMD ["bash", "-lc", "python -c \"print('ingestion image ready')\""]
+# copy the PLZ file explicitly
+COPY src/postleitzahlen.geojson.br /app/postleitzahlen.geojson.br
+
+# make src importable
+ENV PYTHONPATH=/app

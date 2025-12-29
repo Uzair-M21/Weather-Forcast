@@ -5,8 +5,8 @@ CREATE INDEX IF NOT EXISTS raw_plz_geom_gix
 CREATE INDEX IF NOT EXISTS raw_plz_plz_idx
   ON raw.geo_plz (plz);
 
-  CREATE INDEX ix_weather_observations_timestamp
-ON weather_observations (timestamp);
+CREATE INDEX ix_weather_observations_timestamp
+ON raw.current_weather_observations (timestamp,source_id);
 
 create index if not exists idx_forecast_raw_lookup
 on raw.forecast_weather (source_id, timestamp, inserted_at desc);

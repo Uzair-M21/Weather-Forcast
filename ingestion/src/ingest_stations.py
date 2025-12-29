@@ -4,7 +4,7 @@ import requests
 import logging
 import psycopg2
 from psycopg2.extras import execute_batch
-import db
+from src.db import get_connection
 
 logging.basicConfig(
     level=logging.INFO,
@@ -105,7 +105,7 @@ def upsert_stations(stations):
     conn = None
     try:
         logger.info("Connecting with db")
-        conn = db.get_connection()
+        conn = get_connection()
         with conn.cursor() as cur:
             execute_batch(cur, sql, stations,page_size=500)
         conn.commit()

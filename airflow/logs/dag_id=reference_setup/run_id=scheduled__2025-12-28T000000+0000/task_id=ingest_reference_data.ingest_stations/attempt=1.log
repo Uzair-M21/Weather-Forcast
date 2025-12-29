@@ -1,0 +1,163 @@
+[2025-12-29T02:38:00.467+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-29T02:38:00.493+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: reference_setup.ingest_reference_data.ingest_stations scheduled__2025-12-28T00:00:00+00:00 [queued]>
+[2025-12-29T02:38:00.499+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: reference_setup.ingest_reference_data.ingest_stations scheduled__2025-12-28T00:00:00+00:00 [queued]>
+[2025-12-29T02:38:00.500+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-12-29T02:38:00.510+0000] {taskinstance.py:2330} INFO - Executing <Task(DockerOperator): ingest_reference_data.ingest_stations> on 2025-12-28 00:00:00+00:00
+[2025-12-29T02:38:00.516+0000] {standard_task_runner.py:64} INFO - Started process 399 to run task
+[2025-12-29T02:38:00.519+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'reference_setup', 'ingest_reference_data.ingest_stations', 'scheduled__2025-12-28T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/refrence_setup.py', '--cfg-path', '/tmp/tmpwovvd8ek']
+[2025-12-29T02:38:00.521+0000] {standard_task_runner.py:91} INFO - Job 6: Subtask ingest_reference_data.ingest_stations
+[2025-12-29T02:38:00.568+0000] {task_command.py:426} INFO - Running <TaskInstance: reference_setup.ingest_reference_data.ingest_stations scheduled__2025-12-28T00:00:00+00:00 [running]> on host b4f558978544
+[2025-12-29T02:38:00.645+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='reference_setup' AIRFLOW_CTX_TASK_ID='ingest_reference_data.ingest_stations' AIRFLOW_CTX_EXECUTION_DATE='2025-12-28T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-28T00:00:00+00:00'
+[2025-12-29T02:38:00.646+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-29T02:38:00.660+0000] {docker.py:157} ERROR - Failed to establish connection to Docker host unix://var/run/docker.sock: Error while fetching server API version: ('Connection aborted.', FileNotFoundError(2, 'No such file or directory'))
+[2025-12-29T02:38:00.661+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-29T02:38:00.670+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/docker/operators/docker.py", line 495, in execute
+    if self.force_pull or not self.cli.images(name=self.image):
+                              ^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/docker/operators/docker.py", line 363, in cli
+    return self.hook.api_client
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/functools.py", line 1001, in __get__
+    val = self.func(instance)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/docker/hooks/docker.py", line 161, in api_client
+    raise AirflowException("Failed to establish connection to any given Docker hosts.")
+airflow.exceptions.AirflowException: Failed to establish connection to any given Docker hosts.
+[2025-12-29T02:38:00.674+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=reference_setup, task_id=ingest_reference_data.ingest_stations, run_id=scheduled__2025-12-28T00:00:00+00:00, execution_date=20251228T000000, start_date=20251229T023800, end_date=20251229T023800
+[2025-12-29T02:38:00.685+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 6 for task ingest_reference_data.ingest_stations (Failed to establish connection to any given Docker hosts.; 399)
+[2025-12-29T02:38:00.692+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2025-12-29T02:38:00.713+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-29T02:38:00.717+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-12-29T03:02:21.757+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-29T03:02:21.782+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: reference_setup.ingest_reference_data.ingest_stations scheduled__2025-12-28T00:00:00+00:00 [queued]>
+[2025-12-29T03:02:21.788+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: reference_setup.ingest_reference_data.ingest_stations scheduled__2025-12-28T00:00:00+00:00 [queued]>
+[2025-12-29T03:02:21.789+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-12-29T03:02:21.799+0000] {taskinstance.py:2330} INFO - Executing <Task(DockerOperator): ingest_reference_data.ingest_stations> on 2025-12-28 00:00:00+00:00
+[2025-12-29T03:02:21.804+0000] {standard_task_runner.py:64} INFO - Started process 390 to run task
+[2025-12-29T03:02:21.806+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'reference_setup', 'ingest_reference_data.ingest_stations', 'scheduled__2025-12-28T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/refrence_setup.py', '--cfg-path', '/tmp/tmpagosivwx']
+[2025-12-29T03:02:21.808+0000] {standard_task_runner.py:91} INFO - Job 4: Subtask ingest_reference_data.ingest_stations
+[2025-12-29T03:02:21.854+0000] {task_command.py:426} INFO - Running <TaskInstance: reference_setup.ingest_reference_data.ingest_stations scheduled__2025-12-28T00:00:00+00:00 [running]> on host 719c73d53d7e
+[2025-12-29T03:02:21.925+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='reference_setup' AIRFLOW_CTX_TASK_ID='ingest_reference_data.ingest_stations' AIRFLOW_CTX_EXECUTION_DATE='2025-12-28T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-28T00:00:00+00:00'
+[2025-12-29T03:02:21.926+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-29T03:02:21.957+0000] {docker.py:367} INFO - Starting docker container from image weather-ingestion:latest
+[2025-12-29T03:02:21.963+0000] {docker.py:375} WARNING - Using remote engine or docker-in-docker and mounting temporary volume from host is not supported. Falling back to `mount_tmp_dir=False` mode. You can set `mount_tmp_dir` parameter to False to disable mounting and remove the warning
+[2025-12-29T03:02:22.640+0000] {docker.py:438} INFO - 2025-12-29 03:02:22,639 - INFO - Calling Station API
+[2025-12-29T03:02:22.799+0000] {docker.py:438} INFO - 2025-12-29 03:02:22,797 - INFO - Connecting with db
+[2025-12-29T03:02:22.818+0000] {docker.py:438} INFO - 2025-12-29 03:02:22,817 - INFO - data inserted into db
+[2025-12-29T03:02:23.182+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-29T03:02:23.205+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=reference_setup, task_id=ingest_reference_data.ingest_stations, run_id=scheduled__2025-12-28T00:00:00+00:00, execution_date=20251228T000000, start_date=20251229T030221, end_date=20251229T030223
+[2025-12-29T03:02:23.227+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-12-29T03:02:23.249+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-29T03:02:23.251+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-12-29T03:07:20.333+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-29T03:07:20.358+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: reference_setup.ingest_reference_data.ingest_stations scheduled__2025-12-28T00:00:00+00:00 [queued]>
+[2025-12-29T03:07:20.365+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: reference_setup.ingest_reference_data.ingest_stations scheduled__2025-12-28T00:00:00+00:00 [queued]>
+[2025-12-29T03:07:20.366+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-12-29T03:07:20.376+0000] {taskinstance.py:2330} INFO - Executing <Task(DockerOperator): ingest_reference_data.ingest_stations> on 2025-12-28 00:00:00+00:00
+[2025-12-29T03:07:20.383+0000] {standard_task_runner.py:64} INFO - Started process 202 to run task
+[2025-12-29T03:07:20.385+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'reference_setup', 'ingest_reference_data.ingest_stations', 'scheduled__2025-12-28T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/refrence_setup.py', '--cfg-path', '/tmp/tmpf2jve767']
+[2025-12-29T03:07:20.387+0000] {standard_task_runner.py:91} INFO - Job 4: Subtask ingest_reference_data.ingest_stations
+[2025-12-29T03:07:20.437+0000] {task_command.py:426} INFO - Running <TaskInstance: reference_setup.ingest_reference_data.ingest_stations scheduled__2025-12-28T00:00:00+00:00 [running]> on host 9c0baf7db61e
+[2025-12-29T03:07:20.521+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='reference_setup' AIRFLOW_CTX_TASK_ID='ingest_reference_data.ingest_stations' AIRFLOW_CTX_EXECUTION_DATE='2025-12-28T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-28T00:00:00+00:00'
+[2025-12-29T03:07:20.522+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-29T03:07:20.567+0000] {docker.py:367} INFO - Starting docker container from image weather-ingestion:latest
+[2025-12-29T03:07:20.574+0000] {docker.py:375} WARNING - Using remote engine or docker-in-docker and mounting temporary volume from host is not supported. Falling back to `mount_tmp_dir=False` mode. You can set `mount_tmp_dir` parameter to False to disable mounting and remove the warning
+[2025-12-29T03:07:21.421+0000] {docker.py:438} INFO - 2025-12-29 03:07:21,419 - INFO - Calling Station API
+[2025-12-29T03:07:21.589+0000] {docker.py:438} INFO - 2025-12-29 03:07:21,588 - INFO - Connecting with db
+[2025-12-29T03:07:21.608+0000] {docker.py:438} INFO - 2025-12-29 03:07:21,607 - INFO - data inserted into db
+[2025-12-29T03:07:22.108+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-29T03:07:22.135+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=reference_setup, task_id=ingest_reference_data.ingest_stations, run_id=scheduled__2025-12-28T00:00:00+00:00, execution_date=20251228T000000, start_date=20251229T030720, end_date=20251229T030722
+[2025-12-29T03:07:22.282+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-12-29T03:07:22.308+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-29T03:07:22.313+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-12-29T03:11:39.584+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-29T03:11:39.618+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: reference_setup.ingest_reference_data.ingest_stations scheduled__2025-12-28T00:00:00+00:00 [queued]>
+[2025-12-29T03:11:39.628+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: reference_setup.ingest_reference_data.ingest_stations scheduled__2025-12-28T00:00:00+00:00 [queued]>
+[2025-12-29T03:11:39.629+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-12-29T03:11:39.644+0000] {taskinstance.py:2330} INFO - Executing <Task(DockerOperator): ingest_reference_data.ingest_stations> on 2025-12-28 00:00:00+00:00
+[2025-12-29T03:11:39.651+0000] {standard_task_runner.py:64} INFO - Started process 202 to run task
+[2025-12-29T03:11:39.655+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'reference_setup', 'ingest_reference_data.ingest_stations', 'scheduled__2025-12-28T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/refrence_setup.py', '--cfg-path', '/tmp/tmp8_qq3in4']
+[2025-12-29T03:11:39.658+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask ingest_reference_data.ingest_stations
+[2025-12-29T03:11:39.723+0000] {task_command.py:426} INFO - Running <TaskInstance: reference_setup.ingest_reference_data.ingest_stations scheduled__2025-12-28T00:00:00+00:00 [running]> on host acec7d96cb55
+[2025-12-29T03:11:39.825+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='reference_setup' AIRFLOW_CTX_TASK_ID='ingest_reference_data.ingest_stations' AIRFLOW_CTX_EXECUTION_DATE='2025-12-28T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-28T00:00:00+00:00'
+[2025-12-29T03:11:39.827+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-29T03:11:39.893+0000] {docker.py:367} INFO - Starting docker container from image weather-ingestion:latest
+[2025-12-29T03:11:40.830+0000] {docker.py:438} INFO - 2025-12-29 03:11:40,828 - INFO - Calling Station API
+[2025-12-29T03:11:41.009+0000] {docker.py:438} INFO - 2025-12-29 03:11:41,007 - INFO - Connecting with db
+[2025-12-29T03:11:41.030+0000] {docker.py:438} INFO - 2025-12-29 03:11:41,029 - INFO - data inserted into db
+[2025-12-29T03:11:41.433+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-29T03:11:41.465+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=reference_setup, task_id=ingest_reference_data.ingest_stations, run_id=scheduled__2025-12-28T00:00:00+00:00, execution_date=20251228T000000, start_date=20251229T031139, end_date=20251229T031141
+[2025-12-29T03:11:41.562+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-12-29T03:11:41.596+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-29T03:11:41.599+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-12-29T03:18:51.048+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-29T03:18:51.076+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: reference_setup.ingest_reference_data.ingest_stations scheduled__2025-12-28T00:00:00+00:00 [queued]>
+[2025-12-29T03:18:51.082+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: reference_setup.ingest_reference_data.ingest_stations scheduled__2025-12-28T00:00:00+00:00 [queued]>
+[2025-12-29T03:18:51.083+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-12-29T03:18:51.094+0000] {taskinstance.py:2330} INFO - Executing <Task(DockerOperator): ingest_reference_data.ingest_stations> on 2025-12-28 00:00:00+00:00
+[2025-12-29T03:18:51.100+0000] {standard_task_runner.py:64} INFO - Started process 203 to run task
+[2025-12-29T03:18:51.104+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'reference_setup', 'ingest_reference_data.ingest_stations', 'scheduled__2025-12-28T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/refrence_setup.py', '--cfg-path', '/tmp/tmp1lgrpn8s']
+[2025-12-29T03:18:51.106+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask ingest_reference_data.ingest_stations
+[2025-12-29T03:18:51.161+0000] {task_command.py:426} INFO - Running <TaskInstance: reference_setup.ingest_reference_data.ingest_stations scheduled__2025-12-28T00:00:00+00:00 [running]> on host 6c9bd7c2afeb
+[2025-12-29T03:18:51.254+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='reference_setup' AIRFLOW_CTX_TASK_ID='ingest_reference_data.ingest_stations' AIRFLOW_CTX_EXECUTION_DATE='2025-12-28T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-28T00:00:00+00:00'
+[2025-12-29T03:18:51.255+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-29T03:18:51.314+0000] {docker.py:367} INFO - Starting docker container from image weather-ingestion:latest
+[2025-12-29T03:18:52.317+0000] {docker.py:438} INFO - 2025-12-29 03:18:52,315 - INFO - Calling Station API
+[2025-12-29T03:18:52.484+0000] {docker.py:438} INFO - 2025-12-29 03:18:52,483 - INFO - Connecting with db
+[2025-12-29T03:18:52.506+0000] {docker.py:438} INFO - 2025-12-29 03:18:52,504 - INFO - data inserted into db
+[2025-12-29T03:18:52.993+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-29T03:18:53.020+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=reference_setup, task_id=ingest_reference_data.ingest_stations, run_id=scheduled__2025-12-28T00:00:00+00:00, execution_date=20251228T000000, start_date=20251229T031851, end_date=20251229T031853
+[2025-12-29T03:18:53.049+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-12-29T03:18:53.076+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-29T03:18:53.078+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-12-29T03:29:38.994+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-29T03:29:39.021+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: reference_setup.ingest_reference_data.ingest_stations scheduled__2025-12-28T00:00:00+00:00 [queued]>
+[2025-12-29T03:29:39.028+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: reference_setup.ingest_reference_data.ingest_stations scheduled__2025-12-28T00:00:00+00:00 [queued]>
+[2025-12-29T03:29:39.028+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-12-29T03:29:39.039+0000] {taskinstance.py:2330} INFO - Executing <Task(DockerOperator): ingest_reference_data.ingest_stations> on 2025-12-28 00:00:00+00:00
+[2025-12-29T03:29:39.045+0000] {standard_task_runner.py:64} INFO - Started process 202 to run task
+[2025-12-29T03:29:39.047+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'reference_setup', 'ingest_reference_data.ingest_stations', 'scheduled__2025-12-28T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/refrence_setup.py', '--cfg-path', '/tmp/tmphsqkv624']
+[2025-12-29T03:29:39.049+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask ingest_reference_data.ingest_stations
+[2025-12-29T03:29:39.097+0000] {task_command.py:426} INFO - Running <TaskInstance: reference_setup.ingest_reference_data.ingest_stations scheduled__2025-12-28T00:00:00+00:00 [running]> on host 58c791c417b3
+[2025-12-29T03:29:39.181+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='reference_setup' AIRFLOW_CTX_TASK_ID='ingest_reference_data.ingest_stations' AIRFLOW_CTX_EXECUTION_DATE='2025-12-28T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-28T00:00:00+00:00'
+[2025-12-29T03:29:39.182+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-29T03:29:39.235+0000] {docker.py:367} INFO - Starting docker container from image weather-ingestion:latest
+[2025-12-29T03:29:40.139+0000] {docker.py:438} INFO - 2025-12-29 03:29:40,138 - INFO - Calling Station API
+[2025-12-29T03:29:40.322+0000] {docker.py:438} INFO - 2025-12-29 03:29:40,321 - INFO - Connecting with db
+[2025-12-29T03:29:40.342+0000] {docker.py:438} INFO - 2025-12-29 03:29:40,340 - INFO - data inserted into db
+[2025-12-29T03:29:40.938+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-29T03:29:40.964+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=reference_setup, task_id=ingest_reference_data.ingest_stations, run_id=scheduled__2025-12-28T00:00:00+00:00, execution_date=20251228T000000, start_date=20251229T032939, end_date=20251229T032940
+[2025-12-29T03:29:40.992+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-12-29T03:29:41.015+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-29T03:29:41.017+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-12-29T03:45:42.127+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-29T03:45:42.156+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: reference_setup.ingest_reference_data.ingest_stations scheduled__2025-12-28T00:00:00+00:00 [queued]>
+[2025-12-29T03:45:42.164+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: reference_setup.ingest_reference_data.ingest_stations scheduled__2025-12-28T00:00:00+00:00 [queued]>
+[2025-12-29T03:45:42.165+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-12-29T03:45:42.176+0000] {taskinstance.py:2330} INFO - Executing <Task(DockerOperator): ingest_reference_data.ingest_stations> on 2025-12-28 00:00:00+00:00
+[2025-12-29T03:45:42.183+0000] {standard_task_runner.py:64} INFO - Started process 202 to run task
+[2025-12-29T03:45:42.186+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'reference_setup', 'ingest_reference_data.ingest_stations', 'scheduled__2025-12-28T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/refrence_setup.py', '--cfg-path', '/tmp/tmphvnaww19']
+[2025-12-29T03:45:42.188+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask ingest_reference_data.ingest_stations
+[2025-12-29T03:45:42.242+0000] {task_command.py:426} INFO - Running <TaskInstance: reference_setup.ingest_reference_data.ingest_stations scheduled__2025-12-28T00:00:00+00:00 [running]> on host a89c93f0f8bf
+[2025-12-29T03:45:42.335+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='reference_setup' AIRFLOW_CTX_TASK_ID='ingest_reference_data.ingest_stations' AIRFLOW_CTX_EXECUTION_DATE='2025-12-28T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-28T00:00:00+00:00'
+[2025-12-29T03:45:42.336+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-29T03:45:42.394+0000] {docker.py:367} INFO - Starting docker container from image weather-ingestion:latest
+[2025-12-29T03:45:43.270+0000] {docker.py:438} INFO - 2025-12-29 03:45:43,269 - INFO - Calling Station API
+[2025-12-29T03:45:43.457+0000] {docker.py:438} INFO - 2025-12-29 03:45:43,455 - INFO - Connecting with db
+[2025-12-29T03:45:43.476+0000] {docker.py:438} INFO - 2025-12-29 03:45:43,474 - INFO - data inserted into db
+[2025-12-29T03:45:43.982+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-29T03:45:44.013+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=reference_setup, task_id=ingest_reference_data.ingest_stations, run_id=scheduled__2025-12-28T00:00:00+00:00, execution_date=20251228T000000, start_date=20251229T034542, end_date=20251229T034544
+[2025-12-29T03:45:44.124+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-12-29T03:45:44.153+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-29T03:45:44.155+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -4,7 +4,7 @@ import geopandas as gpd
 import brotli
 import logging
 from psycopg2.extras import execute_batch
-import db
+from src.db import get_connection
 
 
 logging.basicConfig(
@@ -14,14 +14,14 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
-plz_file_comp = "postleitzahlen.geojson.br"
-plz_file_decomp = "postleitzahlen.geojson"
+PLZ_FILE_COMP = "/app/postleitzahlen.geojson.br"
+PLZ_FILE_DECOMP = "/app/postleitzahlen.geojson"
 
 def decompress_plz():
 
     try:
         logger.info("Decompressing Plz File")
-        with open(plz_file_comp,"rb") as f:
+        with open(PLZ_FILE_COMP,"rb") as f:
             decompressed = brotli.decompress(f.read())
     except Exception as e:
         logger.error("Unable to decompress Plz.br file, Error : %s ",e)
@@ -29,7 +29,7 @@ def decompress_plz():
 
     try:
         logger.info("Writing Plz File")
-        with open(plz_file_decomp, "wb") as f:
+        with open(PLZ_FILE_DECOMP, "wb") as f:
             f.write(decompressed)
         logger.info("File Written Successfully")
     except Exception as e:
@@ -74,7 +74,7 @@ def insert_geoplz():
     conn = None
     try:
         logger.info("Connecting with db")
-        conn = db.get_connection()
+        conn = get_connection()
         with conn.cursor() as cur:
             execute_batch(cur, sql, geo_plz_data, page_size=500)
         conn.commit()

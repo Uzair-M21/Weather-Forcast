@@ -1,0 +1,18 @@
+[2025-12-29T03:39:21.376+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-29T03:39:21.552+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: reference_setup.set_reference_ready_flag manual__2025-12-29T03:39:01.292030+00:00 [queued]>
+[2025-12-29T03:39:21.561+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: reference_setup.set_reference_ready_flag manual__2025-12-29T03:39:01.292030+00:00 [queued]>
+[2025-12-29T03:39:21.562+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-12-29T03:39:21.575+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): set_reference_ready_flag> on 2025-12-29 03:39:01.292030+00:00
+[2025-12-29T03:39:21.584+0000] {standard_task_runner.py:64} INFO - Started process 216 to run task
+[2025-12-29T03:39:21.586+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'reference_setup', 'set_reference_ready_flag', 'manual__2025-12-29T03:39:01.292030+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/refrence_setup.py', '--cfg-path', '/tmp/tmpjq8_st05']
+[2025-12-29T03:39:21.588+0000] {standard_task_runner.py:91} INFO - Job 12: Subtask set_reference_ready_flag
+[2025-12-29T03:39:21.629+0000] {task_command.py:426} INFO - Running <TaskInstance: reference_setup.set_reference_ready_flag manual__2025-12-29T03:39:01.292030+00:00 [running]> on host 58c791c417b3
+[2025-12-29T03:39:21.706+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='reference_setup' AIRFLOW_CTX_TASK_ID='set_reference_ready_flag' AIRFLOW_CTX_EXECUTION_DATE='2025-12-29T03:39:01.292030+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-29T03:39:01.292030+00:00'
+[2025-12-29T03:39:21.707+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-29T03:39:21.724+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2025-12-29T03:39:21.729+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-12-29T03:39:21.729+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-29T03:39:21.740+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=reference_setup, task_id=set_reference_ready_flag, run_id=manual__2025-12-29T03:39:01.292030+00:00, execution_date=20251229T033901, start_date=20251229T033921, end_date=20251229T033921
+[2025-12-29T03:39:21.759+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-12-29T03:39:21.777+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-29T03:39:21.780+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

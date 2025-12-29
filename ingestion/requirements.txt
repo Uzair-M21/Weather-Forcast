@@ -1,0 +1,7 @@
+requests
+brotli
+psycopg2-binary
+python-dotenv
+pandas
+geopandas
+shapely

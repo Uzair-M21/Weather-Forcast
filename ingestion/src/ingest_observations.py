@@ -1,7 +1,7 @@
 import json
 import logging
 import sys
-import db
+from src.db import get_connection
 import psycopg2
 from psycopg2.extras import execute_batch
 import requests
@@ -32,7 +32,7 @@ def read_berlin_stations():
     conn = None
     try:
         logger.info("Connecting with db")
-        conn = db.get_connection()
+        conn = get_connection()
         with conn.cursor() as cur:
             logger.info("Fetching Berlin's Station list ")
             cur.execute(sql)
@@ -258,7 +258,7 @@ def upsert_current_weather(all_station_current_weather):
     conn = None
     try:
         logger.info("Connecting with db")
-        conn = db.get_connection()
+        conn = get_connection()
         with conn.cursor() as cur:
             execute_batch(cur, sql, all_station_current_weather,page_size=500)
         conn.commit()

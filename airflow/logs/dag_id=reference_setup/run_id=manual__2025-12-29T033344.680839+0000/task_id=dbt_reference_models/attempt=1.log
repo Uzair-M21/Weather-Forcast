@@ -1,0 +1,105 @@
+[2025-12-29T03:33:58.580+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-29T03:33:58.609+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: reference_setup.dbt_reference_models manual__2025-12-29T03:33:44.680839+00:00 [queued]>
+[2025-12-29T03:33:58.617+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: reference_setup.dbt_reference_models manual__2025-12-29T03:33:44.680839+00:00 [queued]>
+[2025-12-29T03:33:58.618+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-12-29T03:33:58.630+0000] {taskinstance.py:2330} INFO - Executing <Task(DockerOperator): dbt_reference_models> on 2025-12-29 03:33:44.680839+00:00
+[2025-12-29T03:33:58.636+0000] {standard_task_runner.py:64} INFO - Started process 290 to run task
+[2025-12-29T03:33:58.639+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'reference_setup', 'dbt_reference_models', 'manual__2025-12-29T03:33:44.680839+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/refrence_setup.py', '--cfg-path', '/tmp/tmpu46v8zhq']
+[2025-12-29T03:33:58.640+0000] {standard_task_runner.py:91} INFO - Job 7: Subtask dbt_reference_models
+[2025-12-29T03:33:58.689+0000] {task_command.py:426} INFO - Running <TaskInstance: reference_setup.dbt_reference_models manual__2025-12-29T03:33:44.680839+00:00 [running]> on host 58c791c417b3
+[2025-12-29T03:33:58.776+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='reference_setup' AIRFLOW_CTX_TASK_ID='dbt_reference_models' AIRFLOW_CTX_EXECUTION_DATE='2025-12-29T03:33:44.680839+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-29T03:33:44.680839+00:00'
+[2025-12-29T03:33:58.777+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-29T03:33:58.818+0000] {docker.py:496} INFO - ::group::Pulling docker image ghcr.io/dbt-labs/dbt-postgres:1.8.2
+[2025-12-29T03:33:59.733+0000] {docker.py:510} INFO - 1.8.2: Pulling from dbt-labs/dbt-postgres
+[2025-12-29T03:33:59.952+0000] {docker.py:510} INFO - f1f26f570256: Pulling fs layer
+[2025-12-29T03:33:59.952+0000] {docker.py:510} INFO - 2d2b01660885: Pulling fs layer
+[2025-12-29T03:33:59.953+0000] {docker.py:510} INFO - e4e8e4c0b0e1: Pulling fs layer
+[2025-12-29T03:33:59.953+0000] {docker.py:510} INFO - 1ba60f086308: Pulling fs layer
+[2025-12-29T03:33:59.953+0000] {docker.py:510} INFO - 3c2fccf90be1: Pulling fs layer
+[2025-12-29T03:33:59.953+0000] {docker.py:510} INFO - b2bb82ac258e: Pulling fs layer
+[2025-12-29T03:33:59.954+0000] {docker.py:510} INFO - e315c1b0dd92: Pulling fs layer
+[2025-12-29T03:33:59.954+0000] {docker.py:510} INFO - 1ba60f086308: Waiting
+[2025-12-29T03:33:59.954+0000] {docker.py:510} INFO - a666411385ee: Pulling fs layer
+[2025-12-29T03:33:59.954+0000] {docker.py:510} INFO - b2f954007d57: Pulling fs layer
+[2025-12-29T03:33:59.954+0000] {docker.py:510} INFO - 3c2fccf90be1: Waiting
+[2025-12-29T03:33:59.955+0000] {docker.py:510} INFO - b2bb82ac258e: Waiting
+[2025-12-29T03:33:59.955+0000] {docker.py:510} INFO - e315c1b0dd92: Waiting
+[2025-12-29T03:33:59.955+0000] {docker.py:510} INFO - a666411385ee: Waiting
+[2025-12-29T03:33:59.955+0000] {docker.py:510} INFO - b2f954007d57: Waiting
+[2025-12-29T03:34:00.347+0000] {docker.py:510} INFO - 2d2b01660885: Downloading
+[2025-12-29T03:34:00.398+0000] {docker.py:510} INFO - e4e8e4c0b0e1: Downloading
+[2025-12-29T03:34:00.510+0000] {docker.py:510} INFO - 2d2b01660885: Verifying Checksum
+[2025-12-29T03:34:00.511+0000] {docker.py:510} INFO - 2d2b01660885: Download complete
+[2025-12-29T03:34:00.539+0000] {docker.py:510} INFO - f1f26f570256: Downloading
+[2025-12-29T03:34:01.013+0000] {docker.py:510} INFO - 1ba60f086308: Downloading
+[2025-12-29T03:34:01.014+0000] {docker.py:510} INFO - 1ba60f086308: Download complete
+[2025-12-29T03:34:01.127+0000] {docker.py:510} INFO - e4e8e4c0b0e1: Verifying Checksum
+[2025-12-29T03:34:01.128+0000] {docker.py:510} INFO - e4e8e4c0b0e1: Download complete
+[2025-12-29T03:34:01.415+0000] {docker.py:510} INFO - 3c2fccf90be1: Downloading
+[2025-12-29T03:34:01.653+0000] {docker.py:510} INFO - 3c2fccf90be1: Verifying Checksum
+[2025-12-29T03:34:01.654+0000] {docker.py:510} INFO - 3c2fccf90be1: Download complete
+[2025-12-29T03:34:01.704+0000] {docker.py:510} INFO - b2bb82ac258e: Downloading
+[2025-12-29T03:34:02.248+0000] {docker.py:510} INFO - e315c1b0dd92: Downloading
+[2025-12-29T03:34:03.198+0000] {docker.py:510} INFO - e315c1b0dd92: Verifying Checksum
+[2025-12-29T03:34:03.199+0000] {docker.py:510} INFO - e315c1b0dd92: Download complete
+[2025-12-29T03:34:03.632+0000] {docker.py:510} INFO - a666411385ee: Downloading
+[2025-12-29T03:34:03.633+0000] {docker.py:510} INFO - a666411385ee: Download complete
+[2025-12-29T03:34:04.193+0000] {docker.py:510} INFO - b2f954007d57: Downloading
+[2025-12-29T03:34:07.052+0000] {docker.py:510} INFO - b2f954007d57: Verifying Checksum
+[2025-12-29T03:34:07.053+0000] {docker.py:510} INFO - b2f954007d57: Download complete
+[2025-12-29T03:34:09.843+0000] {docker.py:510} INFO - b2bb82ac258e: Verifying Checksum
+[2025-12-29T03:34:09.847+0000] {docker.py:510} INFO - b2bb82ac258e: Download complete
+[2025-12-29T03:34:10.130+0000] {docker.py:510} INFO - f1f26f570256: Verifying Checksum
+[2025-12-29T03:34:10.131+0000] {docker.py:510} INFO - f1f26f570256: Download complete
+[2025-12-29T03:34:10.138+0000] {docker.py:510} INFO - f1f26f570256: Extracting
+[2025-12-29T03:34:11.560+0000] {docker.py:510} INFO - f1f26f570256: Pull complete
+[2025-12-29T03:34:11.564+0000] {docker.py:510} INFO - 2d2b01660885: Extracting
+[2025-12-29T03:34:11.672+0000] {docker.py:510} INFO - 2d2b01660885: Pull complete
+[2025-12-29T03:34:11.677+0000] {docker.py:510} INFO - e4e8e4c0b0e1: Extracting
+[2025-12-29T03:34:12.093+0000] {docker.py:510} INFO - e4e8e4c0b0e1: Pull complete
+[2025-12-29T03:34:12.097+0000] {docker.py:510} INFO - 1ba60f086308: Extracting
+[2025-12-29T03:34:12.113+0000] {docker.py:510} INFO - 1ba60f086308: Pull complete
+[2025-12-29T03:34:12.117+0000] {docker.py:510} INFO - 3c2fccf90be1: Extracting
+[2025-12-29T03:34:12.381+0000] {docker.py:510} INFO - 3c2fccf90be1: Pull complete
+[2025-12-29T03:34:12.397+0000] {docker.py:510} INFO - b2bb82ac258e: Extracting
+[2025-12-29T03:34:16.351+0000] {docker.py:510} INFO - b2bb82ac258e: Pull complete
+[2025-12-29T03:34:16.354+0000] {docker.py:510} INFO - e315c1b0dd92: Extracting
+[2025-12-29T03:34:16.896+0000] {docker.py:510} INFO - e315c1b0dd92: Pull complete
+[2025-12-29T03:34:16.898+0000] {docker.py:510} INFO - a666411385ee: Extracting
+[2025-12-29T03:34:16.914+0000] {docker.py:510} INFO - a666411385ee: Pull complete
+[2025-12-29T03:34:16.933+0000] {docker.py:510} INFO - b2f954007d57: Extracting
+[2025-12-29T03:34:18.712+0000] {docker.py:510} INFO - b2f954007d57: Pull complete
+[2025-12-29T03:34:18.723+0000] {docker.py:505} INFO - Digest: sha256:8069ed1264a8e4c3305ea9a5a14246a0bbfe02146beedafe9c39209f75d93a07
+[2025-12-29T03:34:18.726+0000] {docker.py:505} INFO - Status: Downloaded newer image for ghcr.io/dbt-labs/dbt-postgres:1.8.2
+[2025-12-29T03:34:18.728+0000] {docker.py:512} INFO - ::endgroup::
+[2025-12-29T03:34:18.729+0000] {docker.py:367} INFO - Starting docker container from image ghcr.io/dbt-labs/dbt-postgres:1.8.2
+[2025-12-29T03:34:21.028+0000] {docker.py:438} INFO - Usage: dbt [OPTIONS] COMMAND [ARGS]...
+[2025-12-29T03:34:21.028+0000] {docker.py:438} INFO - Try 'dbt -h' for help.
+[2025-12-29T03:34:21.029+0000] {docker.py:438} INFO - 
+[2025-12-29T03:34:21.029+0000] {docker.py:438} INFO - Error: No such command 'dbt'.
+[2025-12-29T03:34:21.721+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-29T03:34:21.736+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/docker/operators/docker.py", line 513, in execute
+    return self._run_image()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/docker/operators/docker.py", line 384, in _run_image
+    return self._run_image_with_mounts(self.mounts, add_tmp_variable=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/docker/operators/docker.py", line 446, in _run_image_with_mounts
+    raise DockerContainerFailedException(f"Docker container failed: {result!r}", logs=log_lines)
+airflow.providers.docker.exceptions.DockerContainerFailedException: Docker container failed: {'StatusCode': 2}
+[2025-12-29T03:34:21.740+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=reference_setup, task_id=dbt_reference_models, run_id=manual__2025-12-29T03:33:44.680839+00:00, execution_date=20251229T033344, start_date=20251229T033358, end_date=20251229T033421
+[2025-12-29T03:34:21.754+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 7 for task dbt_reference_models (Docker container failed: {'StatusCode': 2}; 290)
+[2025-12-29T03:34:21.798+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2025-12-29T03:34:21.821+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-29T03:34:21.826+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

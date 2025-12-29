@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS raw.geo_plz (
   geom_geojson jsonb
 );
 
-CREATE TABLE IF NOT EXISTS raw.weather_observations (
+CREATE TABLE IF NOT EXISTS raw.current_weather_observations (
     timestamp timestamptz NOT NULL,
     source_id text NOT NULL,
 

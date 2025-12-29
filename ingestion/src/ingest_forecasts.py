@@ -39,7 +39,7 @@ def read_berlin_stations():
     conn = None
     try:
         logger.info("Connecting with db")
-        conn = db.get_connection()
+        conn = get_connection()
         with conn.cursor() as cur:
             cur.execute(sql)
             rows=cur.fetchall()
@@ -170,7 +170,7 @@ def insert_forecast_weather(all_station_forecast_weather):
     conn = None
     try:
         logger.info("Connecting with db")
-        conn = db.get_connection()
+        conn = get_connection()
         with conn.cursor() as cur:
             execute_batch(cur, sql, all_station_forecast_weather,page_size=500)
         conn.commit()
