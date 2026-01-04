@@ -129,7 +129,7 @@ def get_current_weather(berlin_stations):
 
 def upsert_current_weather(all_station_current_weather):
     sql = """
-        INSERT INTO raw.weather_observations (
+        INSERT INTO raw.current_weather_observations (
             timestamp,
             source_id,
 
