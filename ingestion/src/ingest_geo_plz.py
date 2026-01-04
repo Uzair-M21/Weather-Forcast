@@ -88,7 +88,6 @@ def insert_geoplz():
 
 
 def main():
-    delete_file()
     decompress_plz()
     insert_geoplz()
     delete_file()
