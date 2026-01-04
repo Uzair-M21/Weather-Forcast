@@ -73,8 +73,8 @@ The resulting data models are designed for downstream usage such as dashboards a
 5. **Access Airflow and Postgres**  
    - Open the Airflow UI to monitor DAG execution and logs.
      http://localhost:8080/
-   - Connect to Postgres using any client (e.g., psql or DBeaver) to inspect ingested and transformed data. localhost:5433 
-   - Use the credentials defined in the `.env` file.
+   - Connect to Postgres using any client (e.g., psql or DBeaver) to inspect ingested and transformed data. localhost:5433 , Please mind the port here : 5433
+   - Use the credentials for airflow and postgres defined in the `.env` file.
 
 6. **Trigger DAGs manually (if required)**  
    If the DAGs do not start automatically, trigger them manually in the following order:
