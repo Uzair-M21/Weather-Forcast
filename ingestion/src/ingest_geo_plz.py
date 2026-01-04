@@ -38,8 +38,8 @@ def decompress_plz():
 
 def delete_file():
     try:
-        logger.info("Deleting File : %s",plz_file_decomp)
-        os.remove(plz_file_decomp)
+        logger.info("Deleting File : %s",PLZ_FILE_DECOMP)
+        os.remove(PLZ_FILE_DECOMP)
         logger.info("File Deleted")
     except Exception as e:
         logger.error("Unable to delete File, Error : %s",e)
