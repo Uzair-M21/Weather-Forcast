@@ -42,51 +42,6 @@ The resulting data models are designed for downstream usage such as dashboards a
 
 ---
 
-## Repository Structure
-
-)
-
-This project ingests weather data into a Postgres data warehouse and builds analytics-ready models using dbt.  
-The resulting data models are designed for downstream usage such as dashboards and machine-learning pipelines.
-
----
-
-## Architecture
-
-### Layers
-
-- **raw**  
-  Persisted source payloads with fixed data types.
-
-- **staging (dbt views)**  
-  1:1 projections of raw tables with standardized naming, light normalization, and validation flags.
-
-- **intermediate (dbt views/tables)**  
-  ML-ready data shapes such as latest-per-station snapshots, consolidated metrics, and spatially prepared dimensions.
-
----
-
-### Pipelines
-
-- **Reference setup/daily ingestion**  
-  Loads station metadata and geo postal-code polygons.
-
-- **Hourly ingestion**  
-  Ingests current weather observations (and forecast data if enabled).
-
-- **Transformation**  
-  dbt models build staging and intermediate layers on top of raw data.
-
----
-
-## Requirements
-
-- Docker  
-- Docker Compose  
-- (Optional) `psql` or DBeaver for database inspection  
-- (Optional) PostGIS enabled in Postgres if spatial joins are used
-
----
 
 ## Repository Structure
 ```
@@ -118,8 +73,8 @@ The resulting data models are designed for downstream usage such as dashboards a
 5. **Access Airflow and Postgres**  
    - Open the Airflow UI to monitor DAG execution and logs.
      http://localhost:8080/
-   - Connect to Postgres using any client (e.g., psql or DBeaver) to inspect ingested and transformed data. localhost:5433 
-   - Use the credentials defined in the `.env` file.
+   - Connect to Postgres using any client (e.g., psql or DBeaver) to inspect ingested and transformed data. localhost:5433 , Please mind the port here : 5433
+   - Use the credentials for airflow and postgres defined in the `.env` file.
 
 6. **Trigger DAGs manually (if required)**  
    If the DAGs do not start automatically, trigger them manually in the following order:
