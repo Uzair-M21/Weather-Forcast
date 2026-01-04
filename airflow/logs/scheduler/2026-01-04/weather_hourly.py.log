@@ -328,3 +328,31 @@
 [2026-01-04T18:30:41.503+0000] {logging_mixin.py:188} INFO - [2026-01-04T18:30:41.502+0000] {dag.py:3089} INFO - Sync 1 DAGs
 [2026-01-04T18:30:41.521+0000] {logging_mixin.py:188} INFO - [2026-01-04T18:30:41.521+0000] {dag.py:3947} INFO - Setting next_dagrun for weather_hourly to 2026-01-04 18:15:00+00:00, run_after=2026-01-04 19:15:00+00:00
 [2026-01-04T18:30:41.539+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/weather_hourly.py took 0.090 seconds
+[2026-01-04T18:31:11.748+0000] {processor.py:161} INFO - Started process (PID=685) to work on /opt/airflow/dags/weather_hourly.py
+[2026-01-04T18:31:11.749+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/weather_hourly.py for tasks to queue
+[2026-01-04T18:31:11.750+0000] {logging_mixin.py:188} INFO - [2026-01-04T18:31:11.750+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/weather_hourly.py
+[2026-01-04T18:31:11.765+0000] {processor.py:840} INFO - DAG(s) 'weather_hourly' retrieved from /opt/airflow/dags/weather_hourly.py
+[2026-01-04T18:31:11.799+0000] {logging_mixin.py:188} INFO - [2026-01-04T18:31:11.799+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-01-04T18:31:11.818+0000] {logging_mixin.py:188} INFO - [2026-01-04T18:31:11.818+0000] {dag.py:3947} INFO - Setting next_dagrun for weather_hourly to 2026-01-04 18:15:00+00:00, run_after=2026-01-04 19:15:00+00:00
+[2026-01-04T18:31:11.835+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/weather_hourly.py took 0.091 seconds
+[2026-01-04T18:31:42.050+0000] {processor.py:161} INFO - Started process (PID=695) to work on /opt/airflow/dags/weather_hourly.py
+[2026-01-04T18:31:42.051+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/weather_hourly.py for tasks to queue
+[2026-01-04T18:31:42.052+0000] {logging_mixin.py:188} INFO - [2026-01-04T18:31:42.052+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/weather_hourly.py
+[2026-01-04T18:31:42.067+0000] {processor.py:840} INFO - DAG(s) 'weather_hourly' retrieved from /opt/airflow/dags/weather_hourly.py
+[2026-01-04T18:31:42.101+0000] {logging_mixin.py:188} INFO - [2026-01-04T18:31:42.101+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-01-04T18:31:42.120+0000] {logging_mixin.py:188} INFO - [2026-01-04T18:31:42.120+0000] {dag.py:3947} INFO - Setting next_dagrun for weather_hourly to 2026-01-04 18:15:00+00:00, run_after=2026-01-04 19:15:00+00:00
+[2026-01-04T18:31:42.136+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/weather_hourly.py took 0.091 seconds
+[2026-01-04T18:32:12.346+0000] {processor.py:161} INFO - Started process (PID=705) to work on /opt/airflow/dags/weather_hourly.py
+[2026-01-04T18:32:12.347+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/weather_hourly.py for tasks to queue
+[2026-01-04T18:32:12.349+0000] {logging_mixin.py:188} INFO - [2026-01-04T18:32:12.349+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/weather_hourly.py
+[2026-01-04T18:32:12.377+0000] {processor.py:840} INFO - DAG(s) 'weather_hourly' retrieved from /opt/airflow/dags/weather_hourly.py
+[2026-01-04T18:32:12.407+0000] {logging_mixin.py:188} INFO - [2026-01-04T18:32:12.407+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-01-04T18:32:12.431+0000] {logging_mixin.py:188} INFO - [2026-01-04T18:32:12.431+0000] {dag.py:3947} INFO - Setting next_dagrun for weather_hourly to 2026-01-04 18:15:00+00:00, run_after=2026-01-04 19:15:00+00:00
+[2026-01-04T18:32:12.452+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/weather_hourly.py took 0.112 seconds
+[2026-01-04T18:32:42.681+0000] {processor.py:161} INFO - Started process (PID=715) to work on /opt/airflow/dags/weather_hourly.py
+[2026-01-04T18:32:42.682+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/weather_hourly.py for tasks to queue
+[2026-01-04T18:32:42.683+0000] {logging_mixin.py:188} INFO - [2026-01-04T18:32:42.683+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/weather_hourly.py
+[2026-01-04T18:32:42.697+0000] {processor.py:840} INFO - DAG(s) 'weather_hourly' retrieved from /opt/airflow/dags/weather_hourly.py
+[2026-01-04T18:32:42.722+0000] {logging_mixin.py:188} INFO - [2026-01-04T18:32:42.722+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-01-04T18:32:42.741+0000] {logging_mixin.py:188} INFO - [2026-01-04T18:32:42.741+0000] {dag.py:3947} INFO - Setting next_dagrun for weather_hourly to 2026-01-04 18:15:00+00:00, run_after=2026-01-04 19:15:00+00:00
+[2026-01-04T18:32:42.758+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/weather_hourly.py took 0.081 seconds
